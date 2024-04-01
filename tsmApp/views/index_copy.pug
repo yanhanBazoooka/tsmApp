@@ -1,0 +1,16 @@
+extends layout
+
+
+block content
+  h1= title
+  p Welcome to Simpli - Sign In Please!
+  form(method="post" action="/signIn")
+    p
+      | email:
+      input(type='text', name='email', value='')
+      |          password:
+      input(type='text', name='password', value='')
+    input(type='submit', value='Submit')
+  p
+  form(method="get" action="/signup")
+    button(type="submit") Sign Up (First User?)
