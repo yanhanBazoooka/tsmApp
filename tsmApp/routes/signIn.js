@@ -11,7 +11,7 @@ router.post('/signIn', function(req, res, next) {
     }
     else {    // incorrect credentials
         //stay in the home page/same page
-        res.render('index', { title: 'Express' });
+        res.render('index', { title: 'index' });
     }
 });
 
