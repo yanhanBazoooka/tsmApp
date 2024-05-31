@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 
 /* GET sign-in page. */
-router.post('/signIn', function(req, res, next) {
+router.get('/signIn', function(req, res, next) {
     //TODO: add validation for email and password
     validateResult = true;
     if (validateResult == true) {
