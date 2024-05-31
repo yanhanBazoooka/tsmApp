@@ -1,3 +1,5 @@
+const db = require("./models");
+
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
@@ -22,6 +24,15 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
+// in development, setting force to be true for recreating the database table
+db.sequelize.sync({ force: true }) //recreate db every time we kill the process when force = true
+ .then(() => {
+   console.log("Synced db.");
+ })
+ .catch((err) => {
+   console.log("Failed to sync db: " + err.message);
+ });
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
