@@ -1,0 +1,35 @@
+extends ../node_modules/jade-bootstrap/_bootstrap
+
+append styles
+  // Custom styles for this template
+  link(href='https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css', rel='stylesheet')
+  link(href='../stylesheets/home.css', rel='stylesheet')
+
+block body
+  .container
+    nav.navbar.navbar-expand-lg.navbar-light.bg-light
+      a.navbar-brand(href='#') MyApp
+      button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarNav', aria-controls='navbarNav', aria-expanded='false', aria-label='Toggle navigation')
+        span.navbar-toggler-icon
+      .collapse.navbar-collapse#navbarNav
+        ul.navbar-nav.mr-auto
+          li.nav-item
+            a.nav-link(href='/tasks') Tasks
+          li.nav-item
+            a.nav-link(href='/teams') Teams
+        form.form-inline.my-2.my-lg-0.ml-auto
+          input.form-control.mr-sm-2(type='search', placeholder='Search', aria-label='Search')
+          button.btn.btn-outline-success.my-2.my-sm-0(type='submit') Search
+        ul.navbar-nav.ml-3
+          li.nav-item
+            a.nav-link(href='/signout') Sign Out
+
+    // Additional content can go here
+    .jumbotron
+      h1.display-4 Welcome to MyApp!
+      p.lead This is the home page.
+
+append scripts
+  script(src='https://code.jquery.com/jquery-3.5.1.slim.min.js', integrity='sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj', crossorigin='anonymous')
+  script(src='https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js', integrity='sha384-IQsoLXl1K27BdsGV3i4DJ8kGzG+FwOV2TybzOglrTKPpC0kBZtfF48fhzut8gKuh', crossorigin='anonymous')
+  script(src='https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js', integrity='sha384-B4gt1jrGC7Jh4AgPujDpzRyzK5cznfQ6c4fw8kAZT9eTc1DmyNeIpe2Xnj6D0dkI', crossorigin='anonymous')
