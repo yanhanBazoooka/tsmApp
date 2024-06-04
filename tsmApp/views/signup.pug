@@ -8,6 +8,8 @@ block body
   .container
     form(method="post" action="/signup").form-signup
       h2.form-signup-heading Sign Up
+      label.sr-only(for='inputName') Name
+      input#inputName.form-control(type='name', placeholder='Name', required='', autofocus='', name='name')
       label.sr-only(for='inputEmail') Email address
       input#inputEmail.form-control(type='email', placeholder='Email address', required='', autofocus='', name='email')
       label.sr-only(for='inputPassword') Password

@@ -1,5 +1,7 @@
 var express = require('express');
 var router = express.Router();
+const users = require("../controllers/user.controller.js");
+router.post('/', users.findUserByEmail); //signin with user credential
 
 /* GET sign-in page. */
 router.get('/signIn', function(req, res, next) {
