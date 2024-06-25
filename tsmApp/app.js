@@ -11,7 +11,9 @@ var usersRouter = require('./routes/users');
 var signInRouter = require('./routes/signIn');
 var signoutRouter = require('./routes/signout');
 var signupRouter = require('./routes/signup');
-var homeRouter = require('./routes/home'); // Add this line
+var homeRouter = require('./routes/home');
+var teamsRouter = require('./routes/teams'); 
+var tasksRouter = require('./routes/tasks'); 
 
 var app = express();
 
@@ -39,7 +41,9 @@ app.use('/users', usersRouter);
 app.use('/signin', signInRouter);
 app.use('/signout', signoutRouter);
 app.use('/signup', signupRouter);
-app.use('/home', homeRouter); // Add this line
+app.use('/home', homeRouter);
+app.use('/teams', teamsRouter); 
+app.use('/tasks', tasksRouter); 
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
